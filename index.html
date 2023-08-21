@@ -1,1 +1,55 @@
-<h1>hi</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box5m">
+        <h2>5m</h2>
+        <p id="count5m">0</p>
+    </div>
+    <div class="box" id="box10m">
+        <h2>10m</h2>
+        <p id="count10m">0</p>
+    </div>
+
+    <script>
+        // Initialize counters
+        let count5m = 0;
+        let count10m = 0;
+
+        // Function to update the counter and display
+        function updateCounter(id) {
+            if (id === 'box5m') {
+                count5m++;
+                document.getElementById('count5m').textContent = count5m;
+            } else if (id === 'box10m') {
+                count10m++;
+                document.getElementById('count10m').textContent = count10m;
+            }
+        }
+
+        // Add click event listeners to the boxes
+        document.getElementById('box5m').addEventListener('click', function() {
+            updateCounter('box5m');
+        });
+
+        document.getElementById('box10m').addEventListener('click', function() {
+            updateCounter('box10m');
+        });
+    </script>
+</body>
+</html>
